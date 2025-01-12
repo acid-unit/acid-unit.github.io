@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acid Unit | Open Source Magento 2 modules</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+</head>
+<body>
+<div class="wrapper">
+    <div class="flask">🧪</div>
+    <div class="title">
+        <h1>
+            <span>Acid</span>
+            <span>Unit</span>
+        </h1>
+    </div>
+    <div class="subtitle">
+        <span><span>Open Source</span></span>
+        <span><span style="visibility: hidden;">|</span><span class="magento">Magento 2</span></span>
+        <span><span>extensions done right</span></span>
+    </div>
+</div>
+
+<script src="./js/vendor/typed.js/typed.umd.js"></script>
+
+<!--suppress JSUnusedGlobalSymbols -->
+<script>
+    const typed = new Typed('.magento', {
+        strings: ['Adobe Commerce'],
+        startDelay: 2000,
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: false,
+        onComplete: function (typed) {
+            typed.cursor.classList.replace('typed-cursor', 'hide')
+        },
+        onBegin: (typed) => {
+            typed.insertCursor();
+            typed.cursor.classList.add("typed-cursor--blink");
+        },
+    });
+</script>
+</body>
+</html>
