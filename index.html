@@ -8,12 +8,52 @@
     <meta name="author" content="Constantine Gosteev">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acid Unit | Open Source Adobe Commerce (Magento 2) extensions</title>
-    <link rel="stylesheet" href="./css/style.css"/>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>"/>
+    <link rel="stylesheet" href="./css/style.min.css"/>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>"/>
     <link rel="preload" href="./fonts/Montserrat/Montserrat-Light.ttf" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="./fonts/CodePro/Code-Pro-Light.woff" as="font" type="font/woff" crossorigin/>
     <link rel="preload" href="./fonts/CodePro/Code-Pro-Light.woff2" as="font" type="font/woff2" crossorigin/>
     <link rel="preload" href="./fonts/CodePro/Code-Pro-Light.ttf" as="font" type="font/ttf" crossorigin/>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Acid Unit",
+            "url": "https://acid.7prism.com/",
+            "description": "Open Source Adobe Commerce (Magento 2) extensions",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Acid Unit",
+                "url": "https://acid.7prism.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://acid.7prism.com/images/icon/tube.png",
+                    "width": 618,
+                    "height": 618
+                }
+            },
+            "hasPart": [
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "Google Tag Manager",
+                    "operatingSystem": "Magento 2",
+                    "applicationCategory": "Ecommerce",
+                    "url": "https://github.com/acid-unit/google-tag-manager/",
+                    "description": "Google Tag Manager extension for Adobe Commerce"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "Wysisyg Editor",
+                    "operatingSystem": "Magento 2",
+                    "applicationCategory": "Ecommerce",
+                    "url": "https://github.com/acid-unit/wysiwyg-editor",
+                    "description": "Wysiwyg Editor button for 'HTML Code' PageBuilder element in Adobe Commerce"
+                }
+            ]
+        }
+    </script>
 </head>
 <body>
 <div class="acid">
@@ -46,6 +86,6 @@
 </div>
 
 <script src="./js/vendor/typed.js/typed.umd.js"></script>
-<script src="./js/script.js"></script>
+<script src="./js/script.min.js"></script>
 </body>
 </html>
