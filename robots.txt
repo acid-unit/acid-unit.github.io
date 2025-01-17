@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://acid.7prism.com/sitemap.xml
