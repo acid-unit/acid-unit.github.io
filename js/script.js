@@ -13,6 +13,7 @@
             setTimeout(() => {
                 document.querySelector('.acid .bar, .acid .typed-cursor--blink').remove();
                 document.querySelector('.acid .typed-cursor--blink').remove();
+                document.querySelector('.magento').classList.add('color-red');
             }, 400);
         },
         onBegin: typed => {
@@ -28,5 +29,11 @@
             event.target.classList.remove('shake');
         }, 800);
     });
+
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    if (isSafari) {
+        document.querySelector('html').classList.add('is-safari');
+    }
 })();
 

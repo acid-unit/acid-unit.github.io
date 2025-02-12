@@ -8,6 +8,7 @@
   --color-black: #000;
   --color-white: #fff;
   --color-cod-gray: #111;
+  --color-red: #E41000;
   --font-weight-extran-light: 200;
   --font-weight-light: 300;
   --font-weight-semibold: 600;
@@ -195,6 +196,9 @@ table {
   margin-bottom: auto;
 }
 .intro {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-default);
   font-family: 'Poppins', var(--generic-font), sans-serif;
   font-weight: var(--font-weight-extran-light);
 }
@@ -202,7 +206,7 @@ table {
   text-align: center;
 }
 .flask {
-  font-size: calc(var(--font-size-base) * 4);
+  font-size: calc(var(--font-size-base) * 3);
   display: inline-block;
   cursor: pointer;
 }
@@ -220,7 +224,6 @@ table {
 .description {
   text-align: center;
   font-size: calc(var(--font-size-base) * 2);
-  margin-top: calc(var(--gap-default) - var(--gap-small));
   display: flex;
   flex-direction: column;
   row-gap: var(--gap-small);
@@ -260,6 +263,10 @@ table {
   opacity: var(--opacity-ready);
   transition: opacity var(--transition-time-default);
 }
+.is-safari .list ul a {
+  font-synthesis: none;
+  -webkit-text-stroke: thin;
+}
 .list ul a:visited {
   color: var(--color-black);
 }
@@ -269,6 +276,12 @@ table {
 .hide {
   opacity: var(--opacity-none);
   transition: opacity var(--transition-time-long);
+}
+.magento {
+  transition: color var(--transition-time-long);
+}
+.color-red {
+  color: var(--color-red);
 }
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
