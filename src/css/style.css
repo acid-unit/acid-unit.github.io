@@ -278,5 +278,13 @@ table {
     color: var(--color-white);
   }
 }
+@media print {
+  .header {
+    display: none;
+  }
+  .header + * {
+    padding-top: 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

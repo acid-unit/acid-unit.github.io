@@ -329,3 +329,14 @@ table {
         }
     }
 }
+
+// Print Styles
+@media print {
+    .header {
+        display: none;
+
+        & + * {
+            padding-top: 0;
+        }
+    }
+}
