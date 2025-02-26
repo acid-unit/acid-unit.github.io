@@ -1,0 +1,20 @@
+{
+    "name": "acid-unit",
+    "version": "1.0.0",
+    "description": "https://acid.7prism.com",
+    "main": "gulpfile.js",
+    "devDependencies": {
+        "gulp": "^5.0.0",
+        "gulp-compile-handlebars": "^0.6.1",
+        "gulp-less": "^5.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-webserver": "^0.9.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Acid Unit",
+    "license": "ISC"
+}

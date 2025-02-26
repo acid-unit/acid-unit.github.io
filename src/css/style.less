@@ -1,4 +1,7 @@
-/* Variables */
+// Variables
+@header-height: 50px;
+@header-padding-bottom: 25px;
+
 :root {
     --generic-font: 'Helvetica Neue', Helvetica, Arial;
     --gap-default: 50px;
@@ -9,7 +12,7 @@
     --color-white: #fff;
     --color-cod-gray: #111;
     --color-red: #E41000;
-    --font-weight-extran-light: 200;
+    --font-weight-extra-light: 200;
     --font-weight-light: 300;
     --font-weight-semibold: 600;
     --opacity-none: 0;
@@ -20,13 +23,25 @@
     --transition-time-long: .4s;
     --divider-width: 100px;
     --divider-height: 2px;
+    --content-width: 900px;
+    --content-letter-spacing: .3px;
+    --header-height: @header-height;
+    --header-padding-bottom: @header-padding-bottom;
 }
 
-/* Fonts */
+// Fonts
 @font-face {
     font-family: 'Poppins';
     src: url('./../fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
-    font-weight: var(--font-weight-extran-light);
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -41,7 +56,7 @@
     font-display: swap;
 }
 
-/* Keyframes */
+// Keyframes
 @keyframes shake {
     10%, 90% {
         transform: translate3d(-1px, 0, 0);
@@ -60,36 +75,15 @@
     }
 }
 
-/* Reset CSS */
-//noinspection CssOverwrittenProperties
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, main, footer, header,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-}
-
 article, aside, details, figcaption, figure, main,
 footer, header, menu, nav, section {
     display: block;
 }
 
 body {
-    line-height: 1;
+    margin: 0;
+    font-family: 'Poppins', var(--generic-font), sans-serif;
+    font-weight: var(--font-weight-extra-light);
 }
 
 ol, ul {
@@ -112,11 +106,13 @@ table {
     border-spacing: 0;
 }
 
-/* Styles */
 .acid {
     min-height: 100vh;
     display: flex;
     place-content: center;
+    line-height: 1;
+    padding-top: var(--gap-default);
+    padding-bottom: var(--gap-default);
 }
 
 .unit {
@@ -124,17 +120,16 @@ table {
     flex-direction: column;
     box-sizing: border-box;
     row-gap: var(--gap-default);
-    padding: var(--gap-default) var(--gap-small);
     margin-top: auto;
     margin-bottom: auto;
+    padding-top: var(--gap-default);
+    padding-bottom: var(--gap-default);
 }
 
 .intro {
     display: flex;
     flex-direction: column;
     row-gap: var(--gap-default);
-    font-family: 'Poppins', var(--generic-font), sans-serif;
-    font-weight: var(--font-weight-extran-light);
 }
 
 .flask-wrapper {
@@ -142,7 +137,7 @@ table {
 }
 
 .flask {
-    font-size: calc(var(--font-size-base) * 3);
+    font-size: calc(var(--font-size-base) * 2.5);
     display: inline-block;
     cursor: pointer;
 
@@ -157,14 +152,14 @@ table {
 
 .title {
     text-align: center;
-    margin-top: var(--gap-tiny);
+    margin: var(--gap-tiny) 0 0;
+    font-weight: var(--font-weight-light);
     font-size: calc(var(--font-size-base) * 3);
 }
 
 .description {
     text-align: center;
     font-size: calc(var(--font-size-base) * 2);
-    //margin-top: calc(var(--gap-default) - var(--gap-small));
     display: flex;
     flex-direction: column;
     row-gap: var(--gap-small);
@@ -181,12 +176,13 @@ table {
     margin: 0 auto;
 }
 
-//noinspection CssInvalidPropertyValue
 .list {
     font-family: 'Code-Pro', var(--generic-font), sans-serif;
     text-align: center;
 
     ul {
+        margin: 0;
+        padding: 0;
         font-size: calc(var(--font-size-base) * 3);
         display: inline-block;
         text-align: left;
@@ -195,7 +191,7 @@ table {
         li {
             display: flex;
             align-items: center;
-            padding-top: 9px; /* vertical alignment */
+            padding-top: 9px; // vertical alignment
 
             &.wip a {
                 opacity: var(--opacity-faded);
@@ -209,6 +205,7 @@ table {
             opacity: var(--opacity-ready);
             transition: opacity var(--transition-time-default);
 
+            //noinspection CssInvalidPropertyValue
             .is-safari & {
                 font-synthesis: none;
                 -webkit-text-stroke: thin;
@@ -225,9 +222,58 @@ table {
     }
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    column-gap: 20px;
+    height: var(--header-height);
+    padding-bottom: var(--header-padding-bottom);
+    position: fixed;
+    top: 0;
+    background: linear-gradient(180deg, var(--color-white) unit((@header-height / (@header-height + @header-padding-bottom) * 100), ~'%'), transparent 100%);
+
+    a {
+        text-decoration: none;
+        color: var(--color-black);
+
+        &:visited {
+            color: var(--color-black);
+        }
+    }
+
+    + * {
+        box-sizing: border-box;
+        padding-top: var(--header-height);
+        padding-left: var(--gap-small);
+        padding-right: var(--gap-small);
+    }
+}
+
+.privacy-policy {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: var(--content-letter-spacing);
+
+    a {
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-black);
+
+        &:visited {
+            color: var(--color-black);
+        }
+    }
+}
+
 .hide {
     opacity: var(--opacity-none);
     transition: opacity var(--transition-time-long);
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .magento {
@@ -238,8 +284,13 @@ table {
     color: var(--color-red);
 }
 
-/* Mobile Styles */
+// Mobile Styles
 @media screen and (max-width: 768px) {
+    .intro,
+    .unit {
+        row-gap: calc(var(--gap-default) / 2);
+    }
+
     .title {
         font-size: calc(var(--font-size-base) * 2.5);
     }
@@ -255,9 +306,9 @@ table {
     }
 }
 
-/* Dark Mode */
+// Dark Mode
 @media (prefers-color-scheme: dark) {
-    .acid {
+    body {
         background: var(--color-cod-gray);
         color: var(--color-white);
     }
