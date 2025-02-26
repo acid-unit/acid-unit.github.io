@@ -313,6 +313,18 @@ table {
         color: var(--color-white);
     }
 
+    .header {
+        background: linear-gradient(180deg, var(--color-cod-gray) unit((@header-height / (@header-height + @header-padding-bottom) * 100), ~'%'), transparent 100%);
+
+        a {
+            color: var(--color-white);
+
+            &:visited {
+                color: var(--color-white);
+            }
+        }
+    }
+
     .divider {
         background: var(--color-white);
     }
