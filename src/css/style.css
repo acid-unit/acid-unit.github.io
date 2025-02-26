@@ -286,6 +286,12 @@ table {
   .list ul a:visited {
     color: var(--color-white);
   }
+  .privacy-policy a {
+    color: var(--color-white);
+  }
+  .privacy-policy a:visited {
+    color: var(--color-white);
+  }
 }
 @media print {
   .header {
